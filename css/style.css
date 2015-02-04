@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82em;
+}
+
+#out {
+    height: 144px;
+    width: 160px;
+    border: 1px solid white;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+#msg {
+    margin: 5px;
+    font-family: sans-serif;
+    font-size: 0.82em;
+}
+
+div.tab {
+    height: 124px;
+    width: 320px;
+    border: 1px solid white;
+    margin: 20px 5px 5px 165px;
+    overflow: auto;
+}
+
+ul.ops {
+    float: left;
+    list-style: none inside;
+}
+
+ul.ops li {
+    cursor: pointer;
+}
+
+table#reg {
+    font-size: 11px;
+    font-family: Lucida Console, Bitstream Vera Sans Mono, monospace;
+    line-height: 1em;
+}
+
+table#reg td.regname {
+    text-align: right;
+    padding-left: 1em;
+}
+
+ul.tablist {
+    list-style: none inside;
+    position: relative;
+    bottom: -1px;
+}
+
+ul.tablist li {
+    display: block;
+    float: left;
+    background: #444;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid white;
+    padding: 3px 0.5em;
+    margin-right: 2px;
+    cursor: pointer;
+    font-size: 9px;
+}
+
+ul.tablist li.tab_hi {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid black;
+    background: black;
+}
+
+p#op_load {
+    margin-left: 165px;
+}
+
+input {
+    background: black;
+    color: white;
+    border: 1px solid white;
+    width: 5em;
+}
+
+input#file {
+    width: 10em;
+}
+
+div#tilectrl {
+    float: left;
+    margin: 1em;
+}
+
+div#tilepixels {
+    width: 96px;
+    height: 96px;
+    border: 1px solid white;
+    float: left;
+    margin: 1em;
+}
+
+div#tilepixels div {
+    width: 12px;
+    height: 12px;
+    float: left;
+}
+
+div.subcanv {
+    width: 160px;
+    float: left;
+}
+
+p.fps {
+    float: right;
+    text-align: right;
+}
