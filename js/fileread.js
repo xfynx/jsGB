@@ -17,11 +17,11 @@ function BinFileReader(fileURL){
 
 	this.getFileSize = function(){
 		return fileSize;
-	}
+	};
 
 	this.getFilePointer = function(){
 		return filePointer;
-	}
+	};
 
 	this.movePointerTo = function(iTo){
 		if(iTo < 0) filePointer = 0;

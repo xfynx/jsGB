@@ -12,7 +12,7 @@ var Emulator = (function () {
 
             frame: function () {
                 var fclock = Z80._clock.m + 17556;
-                var brk = document.getElementById('breakpoint').value;
+                var brk = getById('breakpoint').value;
                 var t0 = new Date();
                 do {
                     if (Z80._halt) Z80._r.m = 1;
@@ -60,7 +60,7 @@ var Emulator = (function () {
                 } while (Z80._clock.m < fclock);
 
                 var t1 = new Date();
-                document.getElementById('fps').innerHTML = Math.round(10000 / (t1 - t0)) / 10;
+                getById('fps').innerHTML = Math.round(10000 / (t1 - t0)) / 10;
             },
 
             reset: function () {
@@ -77,33 +77,33 @@ var Emulator = (function () {
                 Z80._r.c = 0x13;
                 Z80._r.e = 0xD8;
                 Z80._r.a = 1;
-                MMU.load(document.getElementById('file').value);
+                MMU.load(getById('file').value);
 
-                document.getElementById('op_reset').onclick = jsGB.reset;
-                document.getElementById('op_run').onclick = jsGB.run;
-                document.getElementById('op_run').innerHTML = 'Run';
-                document.getElementById('op_step').onclick = jsGB.step;
+                getById('op_reset').onclick = jsGB.reset;
+                getById('op_run').onclick = jsGB.run;
+                getById('op_run').innerHTML = 'Run';
+                getById('op_step').onclick = jsGB.step;
 
-                document.getElementById('tilepixels').innerHTML = '';
+                getById('tilepixels').innerHTML = '';
                 var tp = document.createElement('div');
                 var x;
                 for (var i = 0; i < 64; i++) {
-                    document.getElementById('tilepixels').appendChild(tp);
+                    getById('tilepixels').appendChild(tp);
                     tp = tp.cloneNode(false);
                 }
-                document.getElementById('tilenum').onupdate = jsGB.dbgtile();
-                document.getElementById('tileprev').onclick = function () {
-                    var t = parseInt(document.getElementById('tilenum').value);
+                getById('tilenum').onupdate = jsGB.dbgtile();
+                getById('tileprev').onclick = function () {
+                    var t = parseInt(getById('tilenum').value);
                     t--;
                     if (t < 0) t = 383;
-                    document.getElementById('tilenum').value = t.toString();
+                    getById('tilenum').value = t.toString();
                     jsGB.dbgtile();
                 };
-                document.getElementById('tilenext').onclick = function () {
-                    var t = parseInt(document.getElementById('tilenum').value);
+                getById('tilenext').onclick = function () {
+                    var t = parseInt(getById('tilenum').value);
                     t++;
                     if (t > 383) t = 0;
-                    document.getElementById('tilenum').value = t.toString();
+                    getById('tilenum').value = t.toString();
                     jsGB.dbgtile();
                 };
 
@@ -118,9 +118,9 @@ var Emulator = (function () {
 
             run: function () {
                 Z80._stop = 0;
-                jsGB.run_interval = setInterval(jsGB.frame, 5);
-                document.getElementById('op_run').innerHTML = 'Pause';
-                document.getElementById('op_run').onclick = jsGB.pause;
+                jsGB.run_interval = setInterval(jsGB.frame, 3);         // тут можно поэкспериментировать с fps
+                getById('op_run').innerHTML = 'Pause';
+                getById('op_run').onclick = jsGB.pause;
             },
 
             pause: function () {
@@ -128,14 +128,12 @@ var Emulator = (function () {
                 Z80._stop = 1;
                 jsGB.dbgupdate();
 
-                document.getElementById('op_run').innerHTML = 'Run';
-                document.getElementById('op_run').onclick = jsGB.run;
-
-                //XHR.connect('/log.php', {trace:jsGB.trace}, {success:function(x){}});
+                getById('op_run').innerHTML = 'Run';
+                getById('op_run').onclick = jsGB.run;
             },
 
             dbgupdate: function () {
-                var t = document.getElementById('reg').getElementsByTagName('td');
+                var t = getById('reg').getElementsByTagName('td');
                 var x, j, k;
                 for (var i = 0; i < t.length; i++) {
                     if (t[i].className == 'reg') {
@@ -216,10 +214,10 @@ var Emulator = (function () {
             },
 
             dbgtile: function () {
-                var tn = parseInt(document.getElementById('tilenum').value);
+                var tn = parseInt(getById('tilenum').value);
                 var t = GPU._tilemap[tn];
                 var c = ['#ffffff', '#c0c0c0', '#606060', '#000000'];
-                var d = document.getElementById('tilepixels').getElementsByTagName('div');
+                var d = getById('tilepixels').getElementsByTagName('div');
 
                 for (var y = 0; y < 8; y++)
                     for (var x = 0; x < 8; x++)
