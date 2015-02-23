@@ -77,7 +77,7 @@ var Emulator = (function () {
                 Z80._r.c = 0x13;
                 Z80._r.e = 0xD8;
                 Z80._r.a = 1;
-                MMU.load(getById('file').value);
+                MMU.load('/jsGB/files/'+getById('file').value);
 
                 getById('op_reset').onclick = jsGB.reset;
                 getById('op_run').onclick = jsGB.run;

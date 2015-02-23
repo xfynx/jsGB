@@ -91,7 +91,7 @@ input {
 }
 
 input#file {
-    width: 10em;
+    width: 200px;
 }
 
 div#tilectrl {

@@ -110,16 +110,26 @@
     <p class="fps"><span id="fps">0</span> fps</p>
 </div>
 <p id="op_load">
-    Load
-    <!--<input type="file" id="file">-->
-    <input type="text" id="file" value="/jsGB/tests/tetris.gb">
+    <input type="file" id="file">
     Break at <input type="text" id="breakpoint">
+</p>
+<br/>
+<br/>
+<br/>
+<p>
+    <b>HOWTO: to load another file in memory, choose it with fileselector
+        <br>
+        when stop if needs and reset and when run</b>
+    <br>
+    <br>
+    <b>It needs to store loadable files in inner directory called 'files'
+        <br>
+        without any subdirectories</b>
 </p>
 <script type="text/javascript">
     function getById(elem) {
         return document.getElementById(elem);   // для удобства
     }
-
     Emulator.init();
 </script>
 </body>

@@ -53,8 +53,8 @@ MMU = {
     },
 
     load: function (file) {
-        b = new BinFileReader(file);
-        MMU._rom = b.readString(b.getFileSize(), 0);
+        var binFile = new BinFileReader(file);
+        MMU._rom = binFile.readString(binFile.getFileSize(), 0);
         MMU._carttype = MMU._rom.charCodeAt(0x0147);
 
         LOG.out('MMU', 'ROM loaded, ' + MMU._rom.length + ' bytes.');
