@@ -1,14 +1,29 @@
 jsGB: A GameBoy emulator in JavaScript
 --------------------------------------
 
+Install
+1 - Download source files
+2 - Double-click in index.html to open jsGB on your default browser
+3 - Click on “choose file” button
+4 - Select your favorite Gameboy ROM
+5 - Press “Run”
+
+**Important!**
+Chromium browser is not correctly supported: sprites are blinking.
+
+Imran’s Notes
+—————————————
+jsGB: A GameBoy emulator in JavaScript
+--------------------------------------
+
 jsGB is an interpretive emulator of the GameBoy, designed to be run from
 within a web browser. Yes, it's written in JavaScript.
 
 Current status:
 
-- ~~The emulator is currently hard-coded to load a particular ROM; it should
+- The emulator is currently hard-coded to load a particular ROM; it should
   be possible at some point to develop a fancy dialog for display and
-  loading of the ROMs available at the server.~~ But files needs to store in specific location.
+  loading of the ROMs available at the server.
 - CPU: Emulated, including the CB-page opcodes. There are likely to be
   opcodes in the standard lists that are missing, and the "undocumented"
   ops will be missing.
@@ -22,7 +37,6 @@ Tested browsers:
 
 - FireFox 3.6
 - Opera 10
-- Blinking in Chrome 35+
 
 Acknowledgements:
 
@@ -33,10 +47,3 @@ Acknowledgements:
 - Kevin Matney, UIUC: Microscopic dump of DMG BIOS
 - Arvidsson, Eklund, Murphy: ExCanvas for IE
 - Andy Na: XHR binary file transfer
-
-HOWTO:
-- To load another file in memory, choose it with fileselector
-when stop if needs and reset and when run
-
-- It needs to store loadable files in inner directory called 'files'
-without any subdirectories.
