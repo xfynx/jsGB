@@ -5,21 +5,26 @@
     <title>jsGB</title>
 </head>
 <body>
-<div id="out">
-    <canvas id="screen" width="160" height="144"/>
+<div class="display-and-buttons">
+    <div id="out">
+        <canvas id="screen" width="160" height="144"/>
+    </div>
+    <div>
+        <input type="file" id="files" name="files[]"/>
+        <output id="list"></output>
+    </div>
+    <div class="subcanv">
+        <ul class="ops">
+            <li id="op_reset">Reset</li>
+            <li id="op_run">Run</li>
+        </ul>
+    </div>
+</div>
+<div class="gameboy-img">
+    <img src="img/gameboy-inline1.jpg">
 </div>
 
-<div>
-    <input type="file" id="files" name="files[]"/>
-    <output id="list"></output>
-</div>
 
-<div class="subcanv">
-    <ul class="ops">
-        <li id="op_reset">Reset</li>
-        <li id="op_run">Run</li>
-    </ul>
-</div>
 <script type="text/javascript" src="js/gpu.js"></script>
 <script type="text/javascript" src="js/mmu.js"></script>
 <script type="text/javascript" src="js/key.js"></script>
