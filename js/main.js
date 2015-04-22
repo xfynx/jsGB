@@ -94,9 +94,13 @@ jsGB = {
     }
 };
 
-window.onload = jsGB.reset;
-window.onkeydown = KEY.keydown;
-window.onkeyup = KEY.keyup;
+// entrypoint
+$(window).load(function () {
+    jsGB.reset();
+    $(this).on('keydown', KEY.keydown).on('keyup', KEY.keyup);
+    KEY.bindToButtons();
+    $('#files').on('change', handleFileSelect);
+});
 
 function handleFileSelect(evt) {
     var files = evt.target.files;
@@ -117,6 +121,3 @@ function handleFileSelect(evt) {
         }
     }
 }
-
-
-document.getElementById('files').addEventListener('change', handleFileSelect, false);

@@ -2,15 +2,18 @@ KEY = {
     _keys: [0xF, 0xF],
     _colidx: 0,
 
-    LEFT: 37,
-    UP: 38,
-    RIGHT: 39,
-    DOWN: 40,
-    A: 90,
-    B: 88,
-    START: 13,
-    SELECT: 32,
+    LEFT: $('#LEFT').data('keycode'),
+    UP: $('#UP').data('keycode'),
+    RIGHT: $('#RIGHT').data('keycode'),
+    DOWN: $('#DOWN').data('keycode'),
+    A: $('#A').data('keycode'),
+    B: $('#B').data('keycode'),
+    START: $('#START').data('keycode'),
+    SELECT: $('#SELECT').data('keycode'),
 
+    buttons: function () {
+        return ['LEFT', 'UP', 'RIGHT', 'DOWN', 'A', 'B', 'START', 'SELECT'];
+    },
 
     reset: function () {
         KEY._keys = [0xF, 0xF];
@@ -94,5 +97,15 @@ KEY = {
                 KEY._keys[0] |= 0x8;
                 break;
         }
+    },
+
+    bindToButtons: function(){
+        $.each(KEY.buttons(), function (index, value) {
+            $('#' + value).on('mousedown', function () {
+                KEY.keydown(jQuery.Event('keydown', {keyCode: $(this).data('keycode'), which: $(this).data('keycode')}));
+            }).on('mouseup', function () {
+                KEY.keyup(jQuery.Event('keyup', {keyCode: $(this).data('keycode'), which: $(this).data('keycode')}));
+            });
+        });
     }
 };
