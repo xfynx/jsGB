@@ -102,9 +102,9 @@ KEY = {
     bindToButtons: function(){
         $.each(KEY.buttons(), function (index, value) {
             $('#' + value).on('mousedown', function () {
-                KEY.keydown(jQuery.Event('keydown', {keyCode: $(this).data('keycode'), which: $(this).data('keycode')}));
+                KEY.keydown($.Event('keydown', {keyCode: $(this).data('keycode'), which: $(this).data('keycode')}));
             }).on('mouseup', function () {
-                KEY.keyup(jQuery.Event('keyup', {keyCode: $(this).data('keycode'), which: $(this).data('keycode')}));
+                KEY.keyup($.Event('keyup', {keyCode: $(this).data('keycode'), which: $(this).data('keycode')}));
             });
         });
     }
