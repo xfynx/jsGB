@@ -99,6 +99,9 @@ $(window).load(function () {
     jsGB.reset();
     $(this).on('keydown', KEY.keydown).on('keyup', KEY.keyup);
     KEY.bindToButtons();
+    $(this).on('keydown', function (e) {
+        console.log(e.key + ' = ' + e.keyCode); // just for convenience
+    });
     $('#files').on('change', handleFileSelect);
 });
 
