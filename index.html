@@ -9,30 +9,35 @@
     <div id="out">
         <canvas id="screen" width="160" height="144"/>
     </div>
-    <div>
-        <input type="file" id="files" name="files[]"/>
-        <output id="list"></output>
+    <div id="buttons">
+        <!-- keycodes defined here. html5 feature -->
+        <button class="button-default" id="LEFT" data-keycode="37"></button>
+        <button class="button-default" id="UP" data-keycode="38"></button>
+        <button class="button-default" id="RIGHT" data-keycode="39"></button>
+        <button class="button-default" id="DOWN" data-keycode="40"></button>
+        <button class="button-default" id="A" data-keycode="90"></button>
+        <button class="button-default" id="B" data-keycode="88"></button>
+        <button class="button-default" id="START" data-keycode="13"></button>
+        <button class="button-default" id="SELECT" data-keycode="32"></button>
     </div>
-    <div class="subcanv">
-        <ul class="ops">
-            <li id="op_reset">Reset</li>
-            <li id="op_run">Run</li>
-        </ul>
+    <div style="margin-top: 225px; margin-left: -50px">
+        <div class="subcanv">
+            <ul class="ops">
+                <li id="op_reset">Reset</li>
+                <li id="op_run">Run</li>
+            </ul>
+        </div>
+        <div style="color: white; position: absolute; margin-top: 80px; margin-left: -25px">
+            <input type="file" id="files" name="files[]"/>
+            <br>
+            <br>
+            <output id="list"></output>
+        </div>
     </div>
 </div>
 <div class="gameboy-img">
     <img src="img/gameboy-inline1.jpg">
 </div>
-
-<!-- keycodes defined here. html5 feature -->
-<button id="LEFT" data-keycode="37">left</button>
-<button id="UP" data-keycode="38">up</button>
-<button id="RIGHT" data-keycode="39">right</button>
-<button id="DOWN" data-keycode="40">down</button>
-<button id="A" data-keycode="90">a</button>
-<button id="B" data-keycode="88">b</button>
-<button id="START" data-keycode="13">start</button>
-<button id="SELECT" data-keycode="32">select</button>
 
 </body>
 <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>

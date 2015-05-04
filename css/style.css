@@ -35,3 +35,56 @@ div.subcanv {
     margin-top: 120px;
     position: absolute;
 }
+
+.button-default {
+    position: absolute;
+    width: 30px;
+    height: 25px;
+    background: Transparent no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: green;
+    font-weight: bold;
+}
+
+#LEFT {
+    margin-top: 120px;
+    margin-left: -50px;
+}
+
+#UP {
+    margin-top: 98px;
+    margin-left: -25px;
+}
+
+#RIGHT {
+    margin-top: 120px;
+    margin-left: 0px;
+}
+
+#DOWN {
+    margin-top: 148px;
+    margin-left: -25px;
+}
+
+#START {
+    margin-top: 200px;
+    margin-left: 75px;
+}
+
+#SELECT {
+    margin-top: 200px;
+    margin-left: 24px;
+}
+
+#A {
+    margin-top: 105px;
+    margin-left: 175px;
+}
+
+#B {
+    margin-top: 130px;
+    margin-left: 125px;
+}
